@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="users")
 public class User {
 	
 	@Id
@@ -20,6 +22,8 @@ public class User {
     
     private boolean admin; // User = false, Admin = true
     
+    private boolean enabled;
+    
     protected User() { }
     
     public User(String username, String password)
@@ -27,6 +31,7 @@ public class User {
     	this.username = username;
     	this.password = password;
     	this.admin = false;
+    	this.enabled = true;
     }
     
     public Long id() { return id; }

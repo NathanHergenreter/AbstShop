@@ -39,7 +39,7 @@ public class LoginController {
         return "signup";
     }
     
-    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    @RequestMapping(value = "/perform_signup", method = RequestMethod.POST)
     public ModelAndView registerUserAccount
           (@ModelAttribute("user") @Valid UserDto accountDto, 
           BindingResult result, WebRequest request, Errors errors) {    
